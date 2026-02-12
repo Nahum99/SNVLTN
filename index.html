@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Mi Princesa Pulgui 👑💖</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+}
+
+/* Fondo animado suave */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: move 25s linear infinite;
+}
+
+@keyframes move {
+    from { transform: translate(0,0); }
+    to { transform: translate(-200px,-200px); }
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    max-width: 350px;
+}
+
+/* Carta elegante */
+.card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: 22px;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+button {
+    margin: 8px;
+    padding: 12px 18px;
+    font-size: 15px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yes {
+    background: #ff4d6d;
+    color: white;
+}
+
+#yes:hover {
+    transform: scale(1.1);
+}
+
+#no {
+    background: gray;
+    color: white;
+}
+
+/* Pantalla final */
+#final {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.final-content {
+    animation: fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.gallery {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 320px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: showImg 1s forwards;
+}
+
+/* Animación escalonada */
+.gallery img:nth-child(1) { animation-delay: 0.3s; }
+.gallery img:nth-child(2) { animation-delay: 0.6s; }
+.gallery img:nth-child(3) { animation-delay: 0.9s; }
+.gallery img:nth-child(4) { animation-delay: 1.2s; }
+.gallery img:nth-child(5) { animation-delay: 1.5s; }
+.gallery img:nth-child(6) { animation-delay: 1.8s; }
+
+@keyframes showImg {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+
+@keyframes zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+
+/* Texto animado */
+.fade-in {
+    opacity: 0;
+    animation: appear 1.5s forwards;
+}
+
+.delay {
+    animation-delay: 1s;
+}
+
+@keyframes appear {
+    to { opacity: 1; }
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    top: -10px;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Partículas románticas */
+.particle {
+    position: absolute;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(100vh); opacity: 1; }
+    to { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>Hola Mi Princesa Pulgui👑💕</h1>
+        <p>
+         
+            Desde que te conocí, hasta el día de hoy, se que fuiste, eres y serás la persona que más amo en todo este mundo. 
+        </p>
+        <p>
+            Hoy quiero preguntarte algo muy especial...
+        </p>
+        <h3>¿Quieres volver a ser mi San Valentín? 💖</h3>
+
+        <button id="yes">Sí 💘</button>
+        <button id="no">No(no es opción)😅</button>
+        <br>
+        <button onclick="playMusic()">🎵 Activar música</button>
+    </div>
+</div>
+
+<div id="final">
+    <div class="final-content">
+        <h1 class="fade-in">Sabía que dirías que sí 😍</h1>
+        <p class="fade-in delay">
+            Eres lo mejor que me ha pasado, te amo con todo mi corazón mi flaquita bella!!💖
+        </p>
+
+        <div class="gallery">
+            <img src="foto1.jpg">
+            <img src="foto2.jpg">
+            <img src="foto3.jpg">
+            <img src="foto4.jpg">
+            <img src="foto5.jpg">
+            <img src="foto6.jpg">
+        </div>
+    </div>
+</div>
+
+<audio id="music" loop>
+    <source src="musica.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+/* Botón NO que se mueve */
+const noBtn = document.getElementById("no");
+
+function moveButton() {
+    noBtn.style.position = "absolute";
+    noBtn.style.top = Math.random() * 80 + "%";
+    noBtn.style.left = Math.random() * 80 + "%";
+}
+
+noBtn.addEventListener("touchstart", moveButton);
+noBtn.addEventListener("mouseover", moveButton);
+
+/* Botón SÍ */
+document.getElementById("yes").addEventListener("click", function(){
+    document.querySelector(".container").style.display = "none";
+    document.getElementById("final").style.display = "flex";
+    launchConfetti();
+    createParticles();
+});
+
+/* Confetti */
+function launchConfetti() {
+    for(let i=0;i<120;i++){
+        const conf = document.createElement("div");
+        conf.classList.add("confetti");
+        conf.style.left = Math.random()*100+"vw";
+        conf.style.background = "hsl(" + Math.random()*360 + ",100%,70%)";
+        conf.style.animationDuration = (Math.random()*2+2)+"s";
+        document.body.appendChild(conf);
+
+        setTimeout(()=>conf.remove(),3000);
+    }
+}
+
+/* Corazones flotando */
+function createParticles(){
+    for(let i=0;i<30;i++){
+        const part = document.createElement("div");
+        part.classList.add("particle");
+        part.innerHTML = "💖";
+        part.style.left = Math.random()*100+"vw";
+        part.style.animationDuration = (Math.random()*5+5)+"s";
+        document.getElementById("final").appendChild(part);
+    }
+}
+
+/* Música */
+function playMusic(){
+    document.getElementById("music").play();
+}
+
+</script>
+
+</body>
+</html>
